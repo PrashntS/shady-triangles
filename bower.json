@@ -1,0 +1,27 @@
+{
+  "name": "shady-triangles",
+  "description": "Triangulation and Interpolation for 3D Point Cloud",
+  "main": "main.js",
+  "authors": [
+    "Prashant Sinha"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/PrashntS/shady-triangles",
+  "moduleType": [
+    "globals"
+  ],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "three.js": "mrdoob/three.js",
+    "dat-gui": "~0.5.1",
+    "jquery": "~2.1.4",
+    "socket.io-client": "~1.3.7"
+  }
+}
