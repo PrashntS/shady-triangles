@@ -50251,10 +50251,16 @@ return jQuery;
       uiOptions = {
         'Wireframe': false,
         'Autoscale': true,
+        'Dots': false,
         'Zoom to fit': zoomToFitObject
       };
       window.uiOptions = uiOptions;
       gui.add(uiOptions, 'Wireframe').onChange(function(value) {
+        return asteroidMaterials.map(function(mat) {
+          return mat.wireframe = value;
+        });
+      });
+      gui.add(uiOptions, 'Dots').onChange(function(value) {
         return asteroidMaterials.map(function(mat) {
           return mat.wireframe = value;
         });
@@ -50286,9 +50292,7 @@ return jQuery;
       return console.log(item, loaded, total);
     };
     if (!embeddedMode) {
-      initSelect();
       createGui();
-      document.getElementById('info').style.display = 'block';
     }
     texture = new THREE.Texture;
     loader = new THREE.ImageLoader(manager);

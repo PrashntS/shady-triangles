@@ -57,11 +57,17 @@ createGui = ->
     uiOptions =
       'Wireframe': false
       'Autoscale': true
+      'Dots': false
       'Zoom to fit': zoomToFitObject
     window.uiOptions = uiOptions
     gui.add(uiOptions, 'Wireframe').onChange (value) ->
       asteroidMaterials.map (mat) ->
         mat.wireframe = value
+
+    gui.add(uiOptions, 'Dots').onChange (value) ->
+      asteroidMaterials.map (mat) ->
+        mat.wireframe = value
+
     gui.add(uiOptions, 'Autoscale').onChange (value) ->
       autoScale = value
     gui.add uiOptions, 'Zoom to fit'
@@ -93,9 +99,9 @@ init = ->
 
   # UI stuff
   if !embeddedMode
-    initSelect()
+    # initSelect()
     createGui()
-    document.getElementById('info').style.display = 'block'
+    # document.getElementById('info').style.display = 'block'
   # asteroid texture
   texture = new (THREE.Texture)
   loader = new (THREE.ImageLoader)(manager)
